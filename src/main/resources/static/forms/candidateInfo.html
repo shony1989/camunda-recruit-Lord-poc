@@ -1,0 +1,66 @@
+<form name="CandidateInfo" role="form">
+
+<script cam-script type="text/form-script">
+
+  var candidateData = $scope.candidateData = {};
+
+        camForm.on('form-loaded', function() {
+            camForm.variableManager.createVariable({
+                name: 'candidateData',
+                type: 'Object',
+                value: candidateData,
+                valueInfo: {
+                    serializationDataFormat: 'application/json',
+                    objectTypeName: 'org.ey.bpm.recruit.lord.model.CandidateData'
+                }
+            });
+        });
+
+    </script>
+    
+ <h3>Candidate Info: </h3>
+
+	<div class="control-group">
+    <label class="control-label">Name</label>
+    <div class="controls">
+    <input id="name"
+             class="form-control"
+             type="text"
+             ng-model="candidateData.name">		
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label">Skills</label>
+    <div class="controls">
+		<input id="skills"
+             class="form-control"
+             type="text"
+             ng-model="candidateData.skills">   
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Level</label>
+    <div class="controls">
+		<input id="level"
+             class="form-control"
+             type="text"
+             required 
+             ng-model="candidateData.level">   
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label">Years of Exp.</label>
+    <div class="controls">
+		<input id="level"
+             class="form-control"
+             type="text"
+             required 
+             ng-model="candidateData.yearsOfExp">   
+    </div>
+  </div>
+  
+</form>

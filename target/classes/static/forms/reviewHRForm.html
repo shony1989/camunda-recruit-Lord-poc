@@ -1,0 +1,63 @@
+
+<form class="form-horizontal">
+
+<script cam-script type="text/form-script">
+  camForm.on('form-loaded', function() {
+    camForm.variableManager.fetchVariable('candidateData');
+  });
+  camForm.on('variables-fetched', function() {
+    $scope.candidateData = camForm.variableManager.variableValue('candidateData');
+  });
+</script>
+  
+
+  <h2>Candidate Data</h2>
+  
+  <div class="control-group">
+    <label class="control-label">Name</label>
+    <div class="controls">
+		<input name="type" ng-model="candidateData.name" type="text" readonly class="form-control" />
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label">Skills</label>
+    <div class="controls">
+	<input name="type" ng-model="candidateData.skills" type="text" readonly class="form-control" /> 
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">level</label>
+    <div class="controls">
+		<input name="type" ng-model="candidateData.level" type="text" readonly class="form-control" /> 
+    </div>
+  </div>    
+  
+  <div class="control-group">
+    <label class="control-label">Years Of Exp.</label>
+    <div class="controls">
+		<input name="type" ng-model="candidateData.yearsOfExp" type="text" readonly class="form-control" /> 
+    </div>
+  </div> 
+  
+   <div class="control-group">
+    <label class="control-label">Approve?</label>
+    <div class="controls">
+      <input type="checkbox" class="form-control"
+        cam-variable-name="approved"
+        cam-variable-type="Boolean"
+         />
+    </div>
+    
+    <div class="control-group">
+    <label class="control-label">Comments</label>
+    <div class="controls">
+      <input type="text" class="form-control"
+		cam-variable-name="Comments"
+		cam-variable-type="String"
+        />
+    </div>   
+  
+</form>
